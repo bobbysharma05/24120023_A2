@@ -1,0 +1,46 @@
+KEON ALGORIITHMS ->
+
+Sequential:-
+FAILED tests/test_array.py::TestRemoveDuplicate::test_remove_duplicates - TypeError: TestCase.assertListEqual() missing 1 required positional argument: 'list2'
+FAILED tests/test_array.py::TestSummaryRanges::test_summarize_ranges - AssertionError: Lists differ: ['0-2', '4-5', '7'] != [(0, 2), (4, 5), (7, 7)]
+
+Timings -> 7.20+7.17+7.19+7.24+7.28+7.20+7.20+7.29+7.16+7.19
+Avg_Time -> 7.212
+
+After correction ->
+Timings -> 7.21+7.15+7.13
+Avg_Time -> 7.163
+
+
+pytest -n 1 --dist load --parallel-threads 1
+errors ->
+FAILED tests/test_array.py::TestRemoveDuplicate::test_remove_duplicates - TypeError: TestCase.assertListEqual() missing 1 required positional argument: 'list2'
+FAILED tests/test_array.py::TestSummaryRanges::test_summarize_ranges - AssertionError: Lists differ: ['0-2', '4-5', '7'] != [(0, 2), (4, 5), (7, 7)]
+time -> 8.01+8.02+8.04
+avgtime -> 8.023
+
+pytest -n auto --dist load --parallel-threads auto
+errors ->
+FAILED tests/test_array.py::TestRemoveDuplicate::test_remove_duplicates - TypeError: TestCase.assertListEqual() missing 1 required positional argument: 'list2'
+FAILED tests/test_array.py::TestSummaryRanges::test_summarize_ranges - AssertionError: Lists differ: ['0-2', '4-5', '7'] != [(0, 2), (4, 5), (7, 7)]
+FAILED tests/test_heap.py::TestBinaryHeap::test_insert - AssertionError: Lists differ: [0, 2, 50, 4, 55, 90, 87, 7] != [0, 2, 2, 4, 50, 90, 87, 7, 55]
+FAILED tests/test_heap.py::TestBinaryHeap::test_remove_min - AssertionError: 4 != 7
+FAILED tests/test_linkedlist.py::TestSuite::test_is_palindrome - AssertionError: False is not true
+FAILED tests/test_compression.py::TestHuffmanCoding::test_huffman_coding - AssertionError: b'G\x[11852 chars]x8dLU\x80\xb6\xc9\xc8\xc7\xc5fm\x04\x8a\xcf\x9[16933 chars]qE]?' != b'G\x[11852 chars]x8dLU'
+time -> 72.16+72.64+72.43
+avgtime -> 72.076
+
+
+pytest -n auto --dist load --parallel-threads 1
+errors ->
+FAILED tests/test_array.py::TestRemoveDuplicate::test_remove_duplicates - TypeError: TestCase.assertListEqual() missing 1 required positional argument: 'list2'
+FAILED tests/test_array.py::TestSummaryRanges::test_summarize_ranges - AssertionError: Lists differ: ['0-2', '4-5', '7'] != [(0, 2), (4, 5), (7, 7)]
+time -> 8.02+8.18+8.09
+avgtime -> 8.096
+
+
+Speed Ratios -> 
+
+s1 -> 7.212/8.023 = 0.898
+s2 -> 7.212/72.076 = 0.10006
+s3 -> 7.212/8.09 = 0.8914
